@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="700.0" prefWidth="600.0" spacing="5.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="generator.Controller">
+   <children>
+      <Label text="JSON Generator for Firebase (W4K project)">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="40.0" top="30.0" />
+         </VBox.margin>
+      </Label>
+      <HBox id="chooseItemTypeHBox" alignment="CENTER_LEFT" spacing="10.0">
+         <children>
+            <Label id="chooseItemTypeLabel" text="Choose type:" />
+            <ComboBox id="chooseItemTypeComboBox" fx:id="chooseItemTypeComboBox" />
+         </children>
+      </HBox>
+      <HBox id="nameHBox" alignment="CENTER_LEFT" spacing="10.0">
+         <children>
+            <Label id="nameLabel" text="Name:" />
+            <TextField id="nameTxtField" fx:id="nameTxtField" prefWidth="520.0" promptText="name" />
+         </children>
+      </HBox>
+      <HBox id="eventDateHBox" fx:id="eventDateHBox" alignment="CENTER_LEFT" spacing="5.0">
+         <children>
+            <Label id="eventDateLabel" text="Date:" />
+            <DatePicker id="eventDatePicker" fx:id="eventDatePicker" promptText="dd.mm.rrrr">
+               <HBox.margin>
+                  <Insets left="13.0" />
+               </HBox.margin></DatePicker>
+            <Label id="eventTimeLabel" text="Time:">
+               <padding>
+                  <Insets left="30.0" />
+               </padding></Label>
+            <ChoiceBox id="eventHoursChoiceBox" fx:id="eventHoursChoiceBox" prefWidth="80.0" />
+            <ChoiceBox id="eventMinutesChoiceBox" fx:id="eventMinutesChoiceBox" prefWidth="80.0" />
+         </children>
+      </HBox>
+      <HBox id="descriptionHBox" spacing="10.0">
+         <children>
+            <Label id="descriptionLabel" text="Description:" />
+            <TextArea id="descriptionTxtArea" fx:id="descriptionTxtArea" prefHeight="170.0" prefWidth="485.0" promptText="description" />
+         </children>
+      </HBox>
+      <HBox id="wwwHBox" alignment="CENTER_LEFT" spacing="20.0">
+         <children>
+            <Label text="www:" />
+            <TextField id="wwwTxtField" fx:id="wwwTxtField" prefWidth="518.0" promptText="www" text="http://" />
+         </children>
+      </HBox>
+      <HBox id="gpsHBox" alignment="CENTER_LEFT" spacing="5.0">
+         <children>
+            <Label id="gpsLabel" text="GPS (lat, lon):" />
+            <TextField id="gpsLatTxtField" fx:id="gpsLatTxtField" prefWidth="233.0" promptText="lat">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin></TextField>
+            <TextField id="gpsLonTxtField" fx:id="gpsLonTxtField" prefWidth="233.0" promptText="lon" />
+         </children>
+      </HBox>
+      <HBox id="ratingHbox" alignment="CENTER_LEFT" spacing="12.0">
+         <children>
+            <Label id="ratingLabel" text="Rating:" />
+            <ComboBox id="ratingComboBox" fx:id="ratingComboBox" />
+         </children>
+      </HBox>
+      <HBox id="likesHbox" alignment="CENTER_LEFT" spacing="22.0">
+         <children>
+            <Label id="likesLabel" text="Likes:" />
+            <TextField id="likesTxtField" fx:id="likesTxtField" prefWidth="100.0" />
+         </children>
+      </HBox>
+      <HBox id="itemCountHBox" spacing="5.0">
+         <children>
+            <Label id="itemCountLabel" text="Number of item added:" />
+            <Label id="itemCountNumberLabel" fx:id="itemCountNumberLabel" text="0" />
+         </children>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </HBox>
+      <ButtonBar id="buttonsBar" buttonMinWidth="0.0" maxWidth="310.0">
+        <buttons>
+            <Button id="addItemToJsonBtn" fx:id="addItemToJsonBtn" maxWidth="70.0" mnemonicParsing="false" onAction="#addItemToJson" text="+ Add" />
+          <Button id="clearItemsBtn" disable="true" maxWidth="70.0" mnemonicParsing="false" text="Clear" />
+            <Button id="genJsonBtn" fx:id="genJsonBtn" disable="true" mnemonicParsing="false" prefWidth="150.0" onAction="#generateJson" text="Generate JSON" />
+        </buttons>
+         <VBox.margin>
+            <Insets bottom="30.0" top="10.0" />
+         </VBox.margin>
+      </ButtonBar>
+      <Label id="authorLabel" text="Author: Marek Bodziony" />
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+   </padding>
+</VBox>
