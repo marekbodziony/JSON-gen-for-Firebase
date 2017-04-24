@@ -6,7 +6,7 @@ JSON-gen adds elements with specified values (name, date of event, description, 
 
 You can download [json-gen.jar](https://github.com/marekbodziony/JSON-gen-for-Firebase/raw/8d1dccfc94e639b5d60e4620e379200dbb4d3132/json-gen.jar).
 
-Application was developed as JavaFX with Eclipse with external library [json-simple ver.1.1.1](https://code.google.com/archive/p/json-simple/), the view was developed with SceneBuilder.
+Application was developed as JavaFX app in Eclipse with external library [json-simple ver.1.1.1](https://code.google.com/archive/p/json-simple/), the view was developed with SceneBuilder.
 
 <img src=https://github.com/marekbodziony/JSON-gen-for-Firebase/blob/master/json-gen.png>
 
