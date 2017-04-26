@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.GregorianCalendar;
+
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -97,6 +99,7 @@ public class Generator {
 	// generate JSON file
 	public void generateJson(){
 		JSONObject firebaseJSON = new JSONObject();
+		JSONObject count = new JSONObject();
 		try{
 			firebaseJSON.put(TouristicItemType.EVENT.name(), eventJSON);
 			firebaseJSON.put(TouristicItemType.ATTRACTION.name(), attractionJSON);
@@ -104,6 +107,15 @@ public class Generator {
 			firebaseJSON.put(TouristicItemType.PARK.name(), parkJSON);
 			firebaseJSON.put(TouristicItemType.PLAYGROUND.name(), playgroundJSON);
 			firebaseJSON.put(TouristicItemType.RESTAURANT.name(), restaurantJSON);
+			
+			count.put(TouristicItemType.EVENT.name(), eventJSON.length());
+			count.put(TouristicItemType.ATTRACTION.name(), attractionJSON.length());
+			count.put(TouristicItemType.PLACE.name(), placeJSON.length());
+			count.put(TouristicItemType.PARK.name(), parkJSON.length());
+			count.put(TouristicItemType.PLAYGROUND.name(), playgroundJSON.length());
+			count.put(TouristicItemType.RESTAURANT.name(), restaurantJSON.length());
+			
+			firebaseJSON.put("count",count);
 						
 		}catch (JSONException e){
 			e.printStackTrace();
