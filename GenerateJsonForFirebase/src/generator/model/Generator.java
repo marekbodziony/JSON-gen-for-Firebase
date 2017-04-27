@@ -74,16 +74,14 @@ public class Generator {
 		if (json.names() != null) count = json.names().length();
 		count++;
 		JSONObject jsonTemp = new JSONObject();
-		JSONObject gpsTemp = new JSONObject();
 		try {
 			jsonTemp.put("name", name);
 			if (date != null) jsonTemp.put("date", date.getTimeInMillis());
 			else jsonTemp.put("date", 0);
 			jsonTemp.put("description", description);
-			jsonTemp.put("www",www);
-			gpsTemp.put("lat", gpsLat);
-			gpsTemp.put("lon", gpsLon);
-			jsonTemp.put("gps",gpsTemp);
+			jsonTemp.put("www",www);			
+			jsonTemp.put("gpsLat",gpsLat);
+			jsonTemp.put("gpsLon", gpsLon);
 			jsonTemp.put("rating", rating);
 			jsonTemp.put("likes", likes);
 			
