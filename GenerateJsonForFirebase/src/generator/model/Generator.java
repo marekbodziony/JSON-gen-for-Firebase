@@ -16,14 +16,13 @@ import org.json.JSONObject;
 
 public class Generator {
 	
-	private TouristicItemType type;
-	
+	private TouristicItemType type;	
 	private String name = "no data";
 	private GregorianCalendar date = null;
 	private String description = "no data"; 
 	private String www = "no data";
-	private String gpsLat;
-	private String gpsLon;
+	private float gpsLat;
+	private float gpsLon;
 	private float rating;
 	private long likes;
 
@@ -57,8 +56,8 @@ public class Generator {
 	public void setName(String name) 				{ this.name = name;}
 	public void setDescription(String description) 	{ this.description = description;}
 	public void setWww(String www) 					{ this.www = www;}
-	public void setGpsLat(String gpsLat) 			{ this.gpsLat = gpsLat;}
-	public void setGpsLon(String gpsLon) 			{ this.gpsLon = gpsLon;}
+	public void setGpsLat(float gpsLat) 			{ this.gpsLat = gpsLat;}
+	public void setGpsLon(float gpsLon) 			{ this.gpsLon = gpsLon;}
 	public void setRating(float rating) 			{ this.rating = rating;}
 	public void setLikes(long likes) 				{ this.likes = likes;}
 	public void setJson(JSONObject json) 			{ this.json = json;}
@@ -99,7 +98,7 @@ public class Generator {
 	// generate JSON file
 	public void generateJson(){
 		JSONObject firebaseJSON = new JSONObject();
-		JSONObject count = new JSONObject();
+//		JSONObject count = new JSONObject();		// for adding items count number in every type category 
 		try{
 			firebaseJSON.put(TouristicItemType.EVENT.name(), eventJSON);
 			firebaseJSON.put(TouristicItemType.ATTRACTION.name(), attractionJSON);
@@ -108,14 +107,14 @@ public class Generator {
 			firebaseJSON.put(TouristicItemType.PLAYGROUND.name(), playgroundJSON);
 			firebaseJSON.put(TouristicItemType.RESTAURANT.name(), restaurantJSON);
 			
-			count.put(TouristicItemType.EVENT.name(), eventJSON.length());
-			count.put(TouristicItemType.ATTRACTION.name(), attractionJSON.length());
-			count.put(TouristicItemType.PLACE.name(), placeJSON.length());
-			count.put(TouristicItemType.PARK.name(), parkJSON.length());
-			count.put(TouristicItemType.PLAYGROUND.name(), playgroundJSON.length());
-			count.put(TouristicItemType.RESTAURANT.name(), restaurantJSON.length());
-			
-			firebaseJSON.put("count",count);
+//			count.put(TouristicItemType.EVENT.name(), eventJSON.length());
+//			count.put(TouristicItemType.ATTRACTION.name(), attractionJSON.length());
+//			count.put(TouristicItemType.PLACE.name(), placeJSON.length());
+//			count.put(TouristicItemType.PARK.name(), parkJSON.length());
+//			count.put(TouristicItemType.PLAYGROUND.name(), playgroundJSON.length());
+//			count.put(TouristicItemType.RESTAURANT.name(), restaurantJSON.length());
+//			
+//			firebaseJSON.put("count",count);
 						
 		}catch (JSONException e){
 			e.printStackTrace();

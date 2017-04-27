@@ -101,8 +101,8 @@ public class Controller {
 		}
 		model.setDescription(descriptionTxtArea.getText());
 		model.setWww(wwwTxtField.getText());
-		model.setGpsLat(getStringValueCheckIfNotNULL(gpsLatTxtField));
-		model.setGpsLon(getStringValueCheckIfNotNULL(gpsLonTxtField));
+		model.setGpsLat(Float.parseFloat(getStringValueCheckIfNotNULL(gpsLatTxtField)));
+		model.setGpsLon(Float.parseFloat(getStringValueCheckIfNotNULL(gpsLonTxtField)));
 		model.setRating(ratingComboBox.getValue());
 		model.setLikes(Long.parseLong(getStringValueCheckIfNotNULL(likesTxtField)));
 		

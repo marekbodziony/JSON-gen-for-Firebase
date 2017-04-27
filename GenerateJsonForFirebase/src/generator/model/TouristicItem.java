@@ -1,23 +1,28 @@
 package generator.model;
 
+import java.util.GregorianCalendar;
+
 // general application item class
 
-public abstract class TouristicItem {
+public class TouristicItem {
 
 	// fields
+	private TouristicItemType type;
 	private String name;
+	private GregorianCalendar date;
 	private String description; 
 	private String www;
-	private String gpsLat;
-	private String gpsLon;
+	private float gpsLat;
+	private float gpsLon;
 	private float rating;
 	private long likes;
 	
-	public TouristicItem(String name, String description, String www, String gpsLat, String gpsLon, float rating, long likes){
+	public TouristicItem(TouristicItemType type, String name, GregorianCalendar date, String description, String www, float gpsLat, float gpsLon, float rating, long likes){
+		this.type = type;
 		this.name = name;
+		this.date = date;
 		this.description = description;
-		this.www = www;
-	
+		this.www = www;	
 		this.gpsLat = gpsLat;
 		this.gpsLon = gpsLon;
 		this.rating = rating;
@@ -44,16 +49,16 @@ public abstract class TouristicItem {
 	public void setWww(String www) {
 		this.www = www;
 	}
-	public String getGpsLat() {
+	public float getGpsLat() {
 		return gpsLat;
 	}
-	public void setGpsLat(String gpsLat) {
+	public void setGpsLat(float gpsLat) {
 		this.gpsLat = gpsLat;
 	}
-	public String getGpsLon() {
+	public float getGpsLon() {
 		return gpsLon;
 	}
-	public void setGpsLon(String gpsLon) {
+	public void setGpsLon(float gpsLon) {
 		this.gpsLon = gpsLon;
 	}
 	public float getRating() {
@@ -67,5 +72,17 @@ public abstract class TouristicItem {
 	}
 	public void setLikes(long likes) {
 		this.likes = likes;
-	}	
+	}
+	public TouristicItemType getType() {
+		return type;
+	}
+	public void setType(TouristicItemType type) {
+		this.type = type;
+	}
+	public GregorianCalendar getDate() {
+		return date;
+	}
+	public void setDate(GregorianCalendar date) {
+		this.date = date;
+	}		
 }
